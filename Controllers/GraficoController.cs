@@ -8,11 +8,12 @@ namespace Finstock_Barreto.Controllers
 {
     public class GraficoController : Controller
     {
-      
+        [Authorize]
         public ActionResult PerdaMes()
         {
             return View();
         }
+        [Authorize]
         public ActionResult EntradaSaidaMes()
         {
             return View();

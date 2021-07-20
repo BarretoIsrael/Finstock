@@ -86,14 +86,13 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="nav navibar-nav navbar-right">
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li><a href="#">Olá @User.Identity.Name</a></li>
-                        @using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
-                        {
+                    using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
+                    {
+                        <ul class="nav navibar-nav navbar-right">
+                            <li><h5 style="color:aqua">Olá @User.Identity.Name</h5></li>
                             <li><a href="javascript:document.getElementById('logoffForm').submit()">Sair</a></li>
-                        }
-                    </ul>
+                        </ul>
+                    }
                 }
                 else
                 {

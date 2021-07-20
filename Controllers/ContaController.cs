@@ -26,7 +26,7 @@ namespace Finstock_Barreto.Controllers
                 return View(login);
             }
 
-            var achou = (login.Usuario == "rael" && login.Senha == "123");
+            var achou = UsuarioModel.ValidarUsuario(login.Usuario, login.Senha);
 
             if (achou)
             {

@@ -1,0 +1,89 @@
+﻿@model List<Finstock_Barreto.Models.GrupoProdutoModel>
+@{
+    ViewBag.Title = "Cadastro de Grupo de Produtos";
+}
+
+<style>
+    #grid-cadastro > thead > tr th:nth-child(2) {
+        width: 110px;
+    }
+
+    #grid-cadastro > thead > tr th:nth-child(3) {
+        width: 200px;
+    }
+
+    #cadastro {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #cadastro-cabecalho {
+        border-bottom: 1px #dddddd solid;
+    }
+
+    #cadastro-conteudo {
+        margin-top: 20px;
+    }
+
+    #cabecalho-grid {
+        margin-bottom: 20px;
+    }
+</style>
+<div id="cadastro">
+    <section id="cadastro-cabecalho">
+        <h1><hr />@ViewBag.Title</h1>
+    </section>
+    <section id="cadastro-conteudo">
+
+        <div id="cabecalho-grid" class="row">
+            <div class="col-md-12">
+                <a id="btn-incluir" class="btn btn-success" role="button">
+                    <i class="glyphicon glyphicon-plus">Incluir</i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="grid-cadastro" class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ativo</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Nome</td>
+                                <td>@{var ativo = (item.Ativo ? "S" : "N");}@ativo</td>
+                                <td>
+                                    <a class="btn btn-primary btn-alterar" role="button">
+                                        <i class="glyphicon glyphicon-pencil">Alterar</i>
+                                    </a>
+                                    <a class="btn btn-primary btn-danger" role="button">
+                                        <i class="glyphicon glyphicon-trash">Excluir</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts{
+    <script>
+        $(document).on('click', '#btn-incluir', function () {
+            alert('1');
+        })
+        .on('click', '.btn-alterar', function () {
+            alert('2');
+        })
+        .on('click', '.btn-danger', function () {
+            alert('3');
+        })
+    </script>
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finstock_Barreto.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,17 @@ namespace Finstock_Barreto.Controllers
 {
     public class CadastroController : Controller
     {
-        [Authorize]
-        public ActionResult GrupoProdutos()
+        public static List<GrupoProdutoModel> _listaGrupoProduto = new List<GrupoProdutoModel>()
         {
-            return View();
+            new GrupoProdutoModel() {Id=1, Nome="Canecas", Ativo=true},
+            new GrupoProdutoModel() {Id=2, Nome="Almofadas", Ativo=false},
+            new GrupoProdutoModel() {Id=3, Nome="Camisas", Ativo=false}
+        };
+
+        [Authorize]
+        public ActionResult GrupoProduto()
+        {
+            return View(_listaGrupoProduto);
         }
         [Authorize]
         public ActionResult MarcaProduto()

@@ -34,7 +34,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Grupo de Produtos", "GrupoProdutos", "Cadastro")</li>
+                                <li>@Html.ActionLink("Grupo de Produtos", "GrupoProduto", "Cadastro")</li>
                                 <li>@Html.ActionLink("Marcas de Produtos", "MarcaProduto", "Cadastro")</li>
                                 <li>@Html.ActionLink("Locais de Armazenamento", "LocalProduto", "Cadastro")</li>
                                 <li>@Html.ActionLink("Unidades de Medida", "UnidadeMedida", "Cadastro")</li>
@@ -107,8 +107,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Finstock Barreto</p>
+        <footer class="text-center">
+            <h4>&copy; @DateTime.Now.Year - Finstock Barreto</h4>
         </footer>
     </div>
 
